@@ -15,7 +15,8 @@ def _safe_readline(fd) -> str:
         except UnicodeDecodeError:
             pos -= 1
             fd.seek(pos)  # search where this character begins
-
+        else:
+            break
 
 def find_offsets(filename: str, num_chunks: int) -> tp.List[int]:
     """
